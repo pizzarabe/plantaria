@@ -67,3 +67,10 @@ ALTER TABLE sensor
 add (FOREIGN KEY (plant_id)
 REFERENCES plant(plant_id)
 );
+
+
+Insert into usergroup values('1','system'),('2','admin'),('3','user'),('4','guest');
+
+Insert into user values('1','system','','','1','',''),('2','root','','','2','','root@localhost');
+
+
