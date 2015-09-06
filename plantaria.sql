@@ -6,7 +6,7 @@ create database plantaria;
   lastname varchar(255) ,
   usergroup_id int NOT NULL UNIQUE ,
   lastlogin TIMESTAMP ,
-  passwort varchar(255) ,
+  passwort varchar(255) NOT NULL ,
   salt_id int UNIQUE ,
   email varchar(255) ,
   PRIMARY KEY (user_id)
@@ -50,9 +50,9 @@ create database plantaria;
             );
 
 create table salt (salt_id INT NOT NULL AUTO_INCREMENT ,
-salt_one varchar(255) ,
-salt_two varchar(255) ,
-salt_three varchar(255) ,
+salt_one varchar(255) NOT NULL ,
+salt_two varchar(255) NOT NULL ,
+salt_three varchar(255) NOT NULL ,
 PRIMARY KEY (salt_id)
 );
 
