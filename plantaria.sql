@@ -6,6 +6,8 @@ create database plantaria;
   lastname varchar(255) ,
   usergroup_id int NOT NULL UNIQUE ,
   lastlogin TIMESTAMP ,
+  passwort varchar(255) ,
+  salt_id int UNIQUE ,
   email varchar(255) ,
   PRIMARY KEY (user_id)
   );
@@ -47,6 +49,13 @@ create database plantaria;
             PRIMARY KEY (data_id)
             );
 
+create table salt (salt_id INT NOT NULL AUTO_INCREMENT ,
+salt_one varchar(255) ,
+salt_two varchar(255) ,
+salt_three varchar(255) ,
+PRIMARY KEY (salt_id)
+);
+
 
 ALTER TABLE user
 add (FOREIGN KEY (usergroup_id)
@@ -68,9 +77,14 @@ add (FOREIGN KEY (plant_id)
 REFERENCES plant(plant_id)
 );
 
+ALTER TABLE user
+add (FOREIGN KEY (salt_id)
+REFERENCES salt(salt_id)
+);
 
 Insert into usergroup values('1','system'),('2','admin'),('3','user'),('4','guest');
 
+/*
 Insert into user values('1','system','','','1','',''),('2','root','','','2','','root@localhost');
-
+*/
 
