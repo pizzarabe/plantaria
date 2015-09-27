@@ -7,7 +7,6 @@ create database plantaria;
   usergroup_id int NOT NULL UNIQUE ,
   lastlogin TIMESTAMP ,
   passwort varchar(255) NOT NULL ,
-  salt varchar(255) NOT NULL ,
   email varchar(255) ,
   PRIMARY KEY (user_id)
   );
